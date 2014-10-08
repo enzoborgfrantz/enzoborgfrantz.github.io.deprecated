@@ -1,25 +1,25 @@
 $(document).ready(function(){
 
-		var logo = $("#logo");
-		var audio = new Audio(); //Creating a new audio object
-		audio.src = "audio/Nirvana-Love_Buzz.mp3"; //Assigning the song to the audio object
-		audio.loop = true; //looping the song
-		audio.autoplay = false; //autoplay switched off
-		var status = 0; //the song is not playing yet
-		logo.css('opacity', 0.75);
-		logo.click(function (){
-		if(status) //if the song is already playing
-		{
-			status = 0; //set the status to off
-			audio.pause(); //pause the song
-			logo.css('opacity',0.75);
-		}
-		else //if the song is paused
-		{
-			status = 1; //set the status to on
-			audio.play(); //play the song
-			logo.css('opacity',1);
-			}
+	var logo = $("#logo");
+	var tools = $("#divPlayerTools");
+	var audio = new Audio(); //Creating a new audio object
+	audio.src = "audio/Nirvana-Love_Buzz.mp3"; //Assigning the song to the audio object
+	audio.loop = true; //looping the song
+	audio.autoplay = false; //autoplay switched off
+	var status = 0; //the song is not playing yet
+
+	logo.click(function (){
+		logo.fadeOut();
+		tools.css('visibility', 'visible');
+		tools.fadeIn();
+		audio.play();
+	});
+	
+	tools.click(function(){
+		tools.fadeOut();
+		tools.css('visibility', 'hidden');
+		logo.delay().fadeIn();
+		audio.pause();
 	});
 	
 	var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;

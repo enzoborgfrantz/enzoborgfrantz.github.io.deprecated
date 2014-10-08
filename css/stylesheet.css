@@ -66,7 +66,7 @@ padding: 10px;
 	height: 50px;
 	background-color: white;
 	border:none;
-	padding-left: 10px;
+	padding:0 5px 0 5px;
 	font-size: 35px;
 	color:black;
 	border-bottom: 3px solid black;
@@ -89,7 +89,8 @@ padding: 10px;
 	height: 200px;
 	margin: 0px auto 0px auto;
 	position:relative;
-	}
+	padding-bottom:10px;
+}
 
 #logo
 {
@@ -102,14 +103,32 @@ padding: 10px;
 	}
 
 #logo:hover
-{	
+{
 	/*
 	-webkit-box-shadow: 0px 0px 5px 0px #777;
 	-moz-box-shadow:    0px 0px 5px 0px #777;
-	box-shadow:         0px 0px 5px 0px #777;
-	*/
+	box-shadow:         0px 0px 5px 0px #777;*/
+
 }
 
 #equalizer
 {	
 }
+
+#divPlayerTools
+{
+	width:400px;
+	height: 65px;
+	margin: 0px auto 0px auto;
+	border-top: 3px solid black;
+	display:none;
+	visibility:hidden;
+}
+
+#pause
+{
+	margin: 0px auto;
+	display:block;
+	height: 100%;
+
+	}
