@@ -47,15 +47,19 @@ $(document).ready(function(){
                 fbc_array = new Uint8Array(analyser.frequencyBinCount);
                 analyser.getByteFrequencyData(fbc_array);
                 ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-                bars = 16;
+                bars = 15;
 				
 				
                 for (var i = 0; i < bars; i++) {
                     bar_x = i * (canvas.width / bars) + 1; //x coordinate of the bar
                     bar_width = (canvas.width / bars) - 2; //width of the bar
                     bar_height = -(fbc_array[i] / 1.7);
-                    ctx.fillStyle = "#02ADFF"; // Color of the bars
-                    ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+                    //ctx.fillStyle = "#02ADFF"; // Color of the bars
+                    
+						ctx.fillStyle = "#02ADFF";
+					
+					
+					ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
                 }
             }
 });
