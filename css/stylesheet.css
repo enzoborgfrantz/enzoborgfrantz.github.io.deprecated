@@ -77,27 +77,39 @@ padding: 10px;
 }
 #textBox:focus
 {
-color: #02ADFF;
+	color: #02ADFF;
 	outline:none;
 	border-bottom: 3px solid #02ADFF;
 }
-#image
+
+
+#divPlayer
 {
-	display: block;
-	margin: 15px auto 0px auto;
-	/*width: 400px;
-	height: 225px;*/
-	width: 225px;
-	height: 225px;
-	/*padding:5px;*/
+	width: 400px;	
+	height: 200px;
+	margin: 0px auto 0px auto;
+	position:relative;
 	}
 
-#image:hover
+#logo
 {
-	opacity: .75;
+	width: 200px;
+	height: 200px;
+	display:block;
+	position:absolute;
+	top: 0;
+	left:100;
+	}
+
+#logo:hover
+{	
 	/*
 	-webkit-box-shadow: 0px 0px 5px 0px #777;
 	-moz-box-shadow:    0px 0px 5px 0px #777;
 	box-shadow:         0px 0px 5px 0px #777;
 	*/
+}
+
+#equalizer
+{	
 }
