@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var logo = $("#logo");
 	var tools = $("#divPlayerTools");
 	var audio = new Audio(); //Creating a new audio object
-	audio.src = "audio/Nirvana-Love_Buzz.mp3"; //Assigning the song to the audio object
+	audio.src = "audio/Prodigy-Girls.mp3"; //Assigning the song to the audio object
 	audio.loop = true; //looping the song
 	audio.autoplay = false; //autoplay switched off
 	var status = 0; //the song is not playing yet
@@ -11,7 +11,8 @@ $(document).ready(function(){
 	logo.click(function (){
 		logo.fadeOut();
 		tools.css('visibility', 'visible');
-		tools.fadeIn();
+		tools.css('display', 'block');
+		//tools.fadeIn();
 		audio.play();
 	});
 	
