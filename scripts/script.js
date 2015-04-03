@@ -55,7 +55,7 @@ $(document).ready(function(){
                     bar_x = i * (canvas.width / bars) + 1; //x coordinate of the bar
                     bar_width = (canvas.width / bars) -2; //width of the bar
                     bar_height = -(fbc_array[i] / 1.7);
-                    ctx.fillStyle = "#000000"; //"#02ADFF"; // Color of the bars
+                    ctx.fillStyle = "#FF0000"; //"#02ADFF"; // Color of the bars
 					ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
 					/*ctx.fillRect(bar_x, (fbc_array[i]/1.7), bar_width, 1);
 					ctx.beginPath();
