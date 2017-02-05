@@ -1,0 +1,64 @@
+@import '../../styles/cssVariables';
+$main-navigation-width: 20vw;
+$cool-green: #86d7a6;
+
+.main-navigation {
+    color: red;
+    width: $main-navigation-width;
+    height: $main-navigation-width;
+    background-color: black;
+    position: absolute;
+    top: 20vh;
+    left: calc(50vw - #{$main-navigation-width/2});
+    border-radius: 50%;
+    //background: url('../../assets/images/my-face.png') no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    opacity: 0.75;
+    transition: all 0.35s linear;
+    background-clip: content-box;
+    box-sizing:border-box;
+    padding: 1vw;
+    border: 5px solid transparent;
+
+    &:hover {
+        border: 5px solid $cool-green;
+        opacity: 0.85;
+
+        .navigation-label {
+            transition: all 0.35s ease-in;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.navigation-label {
+    color: $cool-green;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    border-bottom: 3px solid $cool-green;
+
+    &.s {
+        top: 45%;
+        padding-right:5vw;
+        padding-left: 1vw;
+        right: 19.25vw;//calc(#{$main-navigation-width + ($main-navigation-width/12)});
+    }
+
+    &.a {
+        position: relative;
+        top: 15%;
+        padding-left: 5vw;
+        padding-right: 1vw;
+        left: 17.75vw;//calc(#{$main-navigation-width + ($main-navigation-width/12)});
+    }
+
+    &.c {
+        top: 70%;
+        padding-left: 5.5vw;
+        padding-right: 1vw;
+        left: 17.25vw;//calc(#{$main-navigation-width + ($main-navigation-width/12)});
+    }
+}

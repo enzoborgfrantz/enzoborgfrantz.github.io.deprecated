@@ -1,0 +1,145 @@
+@import 'cssVariables';
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+$Raleway: 'Raleway';
+
+body {
+	font-family: $font;
+	margin: 0;
+	padding: 0;
+	font-family: $Raleway;
+	font-size: 2vw;
+}
+@mixin no-appearance() {
+	appearance: none;
+	-webkit-appearance: none;
+}
+@mixin blue-button() {
+	background-color: $light-blue;
+	color: white;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	box-shadow: $shadow;
+	transition: background-color 0.15s ease-in;
+
+	&:hover {
+		background-color: $light-blue-hover;
+	}
+}
+
+.label-header {
+	background-color: $light-gray;
+	color: $dark-gray;
+	display: block;
+	border-radius: 2px 0 0 2px;
+	line-height: 6vh;
+	height: 6vh;
+	font-size: 18px;
+	text-transform: capitalize;
+	transition: background-color 0.35s linear;
+
+	&:hover {
+		background-color: #cbcbcb;
+		/*
+		transition: background-color 0.15s ease-in;
+		&:hover {
+				background-color: #cbcbcb;
+				opacity: .75;
+		}*/
+	}
+}
+
+.label-header-left {
+	@extend .label-header;
+	padding-left: 10px;
+	text-align: left;
+}
+
+.label-header-right {
+	@extend .label-header;
+	padding-right: 10px;
+}
+
+input[type=button] {
+	@include no-appearance();
+}
+$heart-size: 2vw;
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+@mixin heart {
+	width: $heart-size;
+	height: $heart-size;
+	position: fixed;
+	left: 49vw;
+	bottom: 5vh;
+	@include rotate(45deg);
+	background-color: $light-red;
+	transition: transform 0.5s ease-in;
+	opacity: 0.6;
+
+	&:after,
+	&:before {
+		position: absolute;
+		width: $heart-size;
+		height: $heart-size;
+		content: '';
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		background-color: $light-red;
+	}
+
+	&:before {
+		bottom: 0;
+		left: calc(#{-$heart-size/2});
+	}
+
+	&:after {
+		top: calc(-#{$heart-size/2});
+		right: 0;
+	}
+}
+
+.heart-button {
+	@include heart();
+	animation: pulse 1s ease infinite;
+	@keyframes pulse {
+		0% {
+			transform: scale(1) rotate(45deg);
+		}
+
+		50% {
+			transform: scale(1.1) rotate(45deg);
+		}
+
+		100% {
+			transform: scale(1) rotate(45deg);
+		}
+	}
+}
+
+.basic-heart {
+	@include heart();
+	z-index: -1000;
+}
+
+.floating-heart {
+	animation: float 1.5s ease;
+	//animation-delay: random(3)+s;
+	opacity: 0;
+	@keyframes float {
+		 @for $i from 1 through 10{
+			#{$i * 10%} {
+				bottom: calc(#{$i *2 + 5vh}); //calc(#{$i+5vh});
+				left: calc(#{45vw+ $i + 5vw});
+				opacity: calc(#{1- $i/10});
+				transform: scale(calc(#{1-($i/10)})) rotate(90deg);
+			}
+		}
+	}
+}
