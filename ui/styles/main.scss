@@ -128,11 +128,44 @@ $heart-size: 2vw;
 	z-index: -1000;
 }
 
-.floating-heart {
-	animation: float 1.5s ease;
+.floating-heart-right {
+	animation: floatright 1.5s ease;
 	//animation-delay: random(3)+s;
 	opacity: 0;
-	@keyframes float {
+	@keyframes floatright {
+		 @for $i from 1 through 10{
+			#{$i * 10%} {
+				bottom: calc(#{$i * 2 + 5vh}); //calc(#{$i+5vh});
+				//left: calc(#{45vw- $i - 5vw});
+				left: calc(#{48vw - $i });
+				opacity: calc(#{1- $i/10});
+				transform: scale(calc(#{1-($i/10)})) rotate(0deg);
+			}
+		}
+	}
+}
+
+.floating-heart-middle {
+	animation: floatmiddle 1.5s ease;
+	//animation-delay: random(3)+s;
+	opacity: 0;
+	@keyframes floatmiddle {
+		 @for $i from 1 through 10{
+			#{$i * 10%} {
+				bottom: calc(#{$i *2 + 5vh}); //calc(#{$i+5vh});
+				//left: calc(#{45vw+ $i + 5vw});
+				opacity: calc(#{1- $i/10});
+				transform: scale(calc(#{1-($i/10)})) rotate(45deg);
+			}
+		}
+	}
+}
+
+.floating-heart-left {
+	animation: floatleft 1.5s ease;
+	//animation-delay: random(3)+s;
+	opacity: 0;
+	@keyframes floatleft {
 		 @for $i from 1 through 10{
 			#{$i * 10%} {
 				bottom: calc(#{$i *2 + 5vh}); //calc(#{$i+5vh});
