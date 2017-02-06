@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styles from '../styles/main.scss';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
+import MenuBar from './MenuBar/MenuBar';
+import SkillSet from './SkillSet/SkillSet';
 
 export default function animate() {
 
@@ -23,8 +25,9 @@ class Main extends Component {
     render() {
         return (
             <div id="main" className="main">
-                <NavigationMenu/>
+                <MenuBar />
                 <div className="heart-button" onClick={animate}></div>
+                <SkillSet />
             </div>
         );
     }

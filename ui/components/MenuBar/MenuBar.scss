@@ -1,0 +1,22 @@
+$bar-black: #181818;
+
+.menu-bar{
+  background-color: $bar-black;
+  padding-top: 49vh;
+  width:5vw;
+  height:100vh;
+  position:fixed;
+}
+
+.menu-icon{
+  width:2vw;
+  height:2vw;
+  padding-left: 1.5vw;
+  padding-bottom: 1vw;
+  transition: all .15s linear;
+  opacity: .6;
+  &:hover{
+    transform: scale(1.15);
+    opacity: .8;
+  }
+}

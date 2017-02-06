@@ -1,0 +1,30 @@
+@import '../../styles/cssVariables';
+
+.skill-set{
+  position: absolute;
+  margin-left: 25vw;
+  width:50vw;
+  font-size: 15px;
+  padding: 5px;
+  margin-top:65vh;
+  text-align: center;
+  //border:3px solid rgba(24, 24, 24, .8);
+  border-radius: 15px;
+
+}
+
+.skill{
+  margin: 5px;
+  background-color: #00FF96;
+  padding:5px;
+  color:white;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  transition: transform .1s linear;
+  opacity:.8;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
