@@ -26785,6 +26785,14 @@
 
 	var _NavigationMenu2 = _interopRequireDefault(_NavigationMenu);
 
+	var _MenuBar = __webpack_require__(245);
+
+	var _MenuBar2 = _interopRequireDefault(_MenuBar);
+
+	var _SkillSet = __webpack_require__(248);
+
+	var _SkillSet2 = _interopRequireDefault(_SkillSet);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26823,8 +26831,9 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { id: 'main', className: 'main' },
-	                _react2.default.createElement(_NavigationMenu2.default, null),
-	                _react2.default.createElement('div', { className: 'heart-button', onClick: animate })
+	                _react2.default.createElement(_MenuBar2.default, null),
+	                _react2.default.createElement('div', { className: 'heart-button', onClick: animate }),
+	                _react2.default.createElement(_SkillSet2.default, null)
 	            );
 	        }
 	    }]);
@@ -27280,10 +27289,219 @@
 
 
 	// module
-	exports.push([module.id, ".main-navigation {\n  color: red;\n  width: 20vw;\n  height: 20vw;\n  background-color: black;\n  position: absolute;\n  top: 20vh;\n  left: calc(50vw - 10vw);\n  border-radius: 50%;\n  background-size: contain;\n  background-position: 50% 50%;\n  opacity: 0.75;\n  transition: all 0.35s linear;\n  background-clip: content-box;\n  box-sizing: border-box;\n  padding: 1vw;\n  border: 5px solid transparent; }\n  .main-navigation:hover {\n    border: 5px solid #86d7a6;\n    opacity: 0.85; }\n    .main-navigation:hover .navigation-label {\n      transition: all 0.35s ease-in;\n      visibility: visible;\n      opacity: 1; }\n\n.navigation-label {\n  color: #86d7a6;\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  border-bottom: 3px solid #86d7a6; }\n  .navigation-label.s {\n    top: 45%;\n    padding-right: 5vw;\n    padding-left: 1vw;\n    right: 19.25vw; }\n  .navigation-label.a {\n    position: relative;\n    top: 15%;\n    padding-left: 5vw;\n    padding-right: 1vw;\n    left: 17.75vw; }\n  .navigation-label.c {\n    top: 70%;\n    padding-left: 5.5vw;\n    padding-right: 1vw;\n    left: 17.25vw; }\n", ""]);
+	exports.push([module.id, ".main-navigation {\n  color: red;\n  width: 20vw;\n  height: 20vw;\n  background-color: #181818;\n  position: absolute;\n  top: 20vh;\n  left: calc(50vw - 10vw);\n  border-radius: 50%;\n  background-size: contain;\n  background-position: 50% 50%;\n  opacity: 0.9;\n  transition: all 0.35s linear;\n  background-clip: content-box;\n  box-sizing: border-box;\n  padding: 1vw;\n  border: 5px solid transparent; }\n  .main-navigation:hover {\n    border: 5px solid #86d7a6;\n    opacity: 0.85; }\n    .main-navigation:hover .navigation-label {\n      transition: all 0.35s ease-in;\n      visibility: visible;\n      opacity: 1; }\n\n.navigation-label {\n  color: #86d7a6;\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  border-bottom: 3px solid #86d7a6; }\n  .navigation-label.s {\n    top: 45%;\n    padding-right: 5vw;\n    padding-left: 1vw;\n    right: 19.25vw; }\n  .navigation-label.a {\n    position: relative;\n    top: 15%;\n    padding-left: 5vw;\n    padding-right: 1vw;\n    left: 17.75vw; }\n  .navigation-label.c {\n    top: 70%;\n    padding-left: 5.5vw;\n    padding-right: 1vw;\n    left: 17.25vw; }\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _MenuBar = __webpack_require__(246);
+
+	var _MenuBar2 = _interopRequireDefault(_MenuBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MenuBar = function (_Component) {
+	    _inherits(MenuBar, _Component);
+
+	    function MenuBar() {
+	        _classCallCheck(this, MenuBar);
+
+	        return _possibleConstructorReturn(this, (MenuBar.__proto__ || Object.getPrototypeOf(MenuBar)).apply(this, arguments));
+	    }
+
+	    _createClass(MenuBar, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'menu-bar' },
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/google.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/facebook.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/github.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/linkedin.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/skype.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/spotify.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/twitter.svg' }),
+	                _react2.default.createElement('img', { className: 'menu-icon', src: '../../ui/assets/icons/whatsapp.svg' })
+	            );
+	        }
+	    }]);
+
+	    return MenuBar;
+	}(_react.Component);
+
+	module.exports = MenuBar;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(247);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(241)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!!./MenuBar.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!!./MenuBar.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(240)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".menu-bar {\n  background-color: #181818;\n  padding-top: 49vh;\n  width: 5vw;\n  height: 100vh;\n  position: fixed; }\n\n.menu-icon {\n  width: 2vw;\n  height: 2vw;\n  padding-left: 1.5vw;\n  padding-bottom: 1vw;\n  transition: all .15s linear;\n  opacity: .6; }\n  .menu-icon:hover {\n    transform: scale(1.15);\n    opacity: .8; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SkillSet = __webpack_require__(249);
+
+	var _SkillSet2 = _interopRequireDefault(_SkillSet);
+
+	var _skills = __webpack_require__(251);
+
+	var _skills2 = _interopRequireDefault(_skills);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkillSet = function (_Component) {
+	    _inherits(SkillSet, _Component);
+
+	    function SkillSet() {
+	        _classCallCheck(this, SkillSet);
+
+	        return _possibleConstructorReturn(this, (SkillSet.__proto__ || Object.getPrototypeOf(SkillSet)).apply(this, arguments));
+	    }
+
+	    _createClass(SkillSet, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'skill-set' },
+	                    _skills2.default.map(function (m) {
+	                        return _react2.default.createElement(
+	                            'div',
+	                            { className: 'skill' },
+	                            ' ',
+	                            m,
+	                            ' '
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkillSet;
+	}(_react.Component);
+
+	module.exports = SkillSet;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(250);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(241)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!!./SkillSet.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!!./SkillSet.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(240)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".skill-set {\n  position: absolute;\n  margin-left: 25vw;\n  width: 50vw;\n  font-size: 15px;\n  padding: 5px;\n  margin-top: 65vh;\n  text-align: center;\n  border-radius: 15px; }\n\n.skill {\n  margin: 5px;\n  background-color: #00FF96;\n  padding: 5px;\n  color: white;\n  border-radius: 5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  display: inline-block;\n  transition: transform .1s linear;\n  opacity: .8; }\n  .skill:hover {\n    transform: scale(1.1); }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 251 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = ["Javascript", "CSS", "HTML", "React.js", "jQuery", "Underscore.js", "SASS", "SCRUM", "Agile", "Jave", "Jira", "Optimizely", "Unit Testing", "C#", "LINQ", "ASP.NET", "MVC", "Git", "Unity", "Jenkins", "OOP", "SQL"];
 
 /***/ }
 /******/ ]);
