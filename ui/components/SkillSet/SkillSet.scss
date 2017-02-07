@@ -1,9 +1,10 @@
 @import '../../styles/cssVariables';
+@import '../../styles/main';
 
 .skill-set{
   position: absolute;
-  margin-left: 25vw;
-  width:50vw;
+  margin-left: 20vw;
+  width:60vw;
   font-size: 15px;
   padding: 5px;
   margin-top:65vh;
@@ -19,12 +20,15 @@
   padding:5px;
   color:white;
   border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   display: inline-block;
+font-weight: 600;
+  -webkit-font-smoothing: antialiased;
   transition: transform .1s linear;
   opacity:.8;
   &:hover{
     transform: scale(1.1);
+    cursor: auto;
   }
 }

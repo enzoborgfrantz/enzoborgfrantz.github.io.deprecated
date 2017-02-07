@@ -1,10 +1,12 @@
 $bar-black: #181818;
 
 .menu-bar{
-  background-color: $bar-black;
-  padding-top: 49vh;
-  width:5vw;
-  height:100vh;
+//  background-color: $bar-black;
+  //padding-top: 49vh;
+  width:100vw;
+  height:7vh;
+  padding-top:2vh;
+  padding-left:34.5vw;
   position:fixed;
 }
 
@@ -14,9 +16,9 @@ $bar-black: #181818;
   padding-left: 1.5vw;
   padding-bottom: 1vw;
   transition: all .15s linear;
-  opacity: .6;
+  opacity: 1;
   &:hover{
     transform: scale(1.15);
-    opacity: .8;
+    opacity: .7;
   }
 }
