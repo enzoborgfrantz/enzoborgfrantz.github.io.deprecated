@@ -1,0 +1,95 @@
+@import '../../styles/cssVariables';
+$heart-size: 2vw;
+$heart-color: rgba(255, 0, 0, 1);
+$posY: 40vh;
+$posX: 50vw-$heart-size/2; //calc(#{50-$heart-size/2});
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+.heart {
+    width: $heart-size;
+    height: $heart-size;
+    position: fixed;
+    left: $posX;
+    bottom: $posY;
+    @include rotate(45deg);
+    background-color: $heart-color;
+    transition: transform 0.5s ease-in;
+    opacity: 0.6;
+
+    &:after,
+    &:before {
+        position: absolute;
+        width: $heart-size;
+        height: $heart-size;
+        content: '';
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        background-color: $heart-color;
+    }
+
+    &:before {
+        bottom: 0;
+        left: calc(#{-$heart-size/2});
+    }
+
+    &:after {
+        top: calc(-#{$heart-size/2});
+        right: 0;
+    }
+}
+
+.heart-button {
+    @extend .heart;
+    animation: pulse 1s ease infinite;
+    @keyframes pulse {
+        0% {
+            transform: scale(1) rotate(45deg);
+        }
+
+        50% {
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        100% {
+            transform: scale(1) rotate(45deg);
+        }
+    }
+}
+@mixin float-heart($rotate, $left) {
+    opacity: 0;
+    animation: #{"float"+$rotate} 1.5s ease;
+    @keyframes #{"float"+$rotate} {
+         @for $i from 1 through 10{
+            #{$i * 10%} {
+                bottom: #{$i * 2 + $posY};
+                opacity: #{1 - $i/10};
+                left: #{$posX + $i * $left};
+                transform: scale(#{1-($i/10)}) rotate($rotate);
+            }
+        }
+    }
+}
+
+.floating-heart {
+    @extend .heart;
+    z-index: -1000;
+
+    &.left {
+        @include float-heart(0deg, -1);
+    }
+
+    &.middle {
+        @include float-heart(45deg, 0);
+    }
+
+    &.right {
+        @include float-heart(90deg, 1);
+    }
+}
