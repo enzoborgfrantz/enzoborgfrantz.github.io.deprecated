@@ -3,31 +3,20 @@ import styles from '../styles/main.scss';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
 import MenuBar from './MenuBar/MenuBar';
 import SkillSet from './SkillSet/SkillSet';
+import Heart from './Heart/heart';
 
-export default function animate() {
-
-    var floatingHeartLeft = document.createElement('div');
-    floatingHeartLeft.className = "basic-heart floating-heart-left";
-    document.getElementById("main").appendChild(floatingHeartLeft);
-
-    var floatingHeartMiddle = document.createElement('div');
-    floatingHeartMiddle.className = "basic-heart floating-heart-middle";
-    document.getElementById("main").appendChild(floatingHeartMiddle);
-
-    var floatingHeartRight = document.createElement('div');
-    floatingHeartRight.className = "basic-heart floating-heart-right";
-    document.getElementById("main").appendChild(floatingHeartRight);
-
-}
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 class Main extends Component {
 
     render() {
         return (
             <div id="main" className="main">
-                <MenuBar />
-                <div className="heart-button" onClick={animate}></div>
-                <SkillSet />
+                <h1>Enzo Borg Frantz</h1>
+                <MenuBar/>
+                <Heart/>
+                <SkillSet/>
             </div>
         );
     }

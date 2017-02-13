@@ -1,24 +1,25 @@
 $bar-black: #181818;
 
 .menu-bar{
-//  background-color: $bar-black;
-  //padding-top: 49vh;
+  background-color: $bar-black;
+  padding-top: 2vh;
   width:100vw;
-  height:7vh;
-  padding-top:2vh;
-  padding-left:34.5vw;
+  height:5vh;
+  padding-left:37.5vw;
   position:fixed;
+  bottom:0;
+  opacity: .95;
 }
 
 .menu-icon{
   width:2vw;
   height:2vw;
-  padding-left: 1.5vw;
-  padding-bottom: 1vw;
+  padding-right: 1.5vw;
+  //padding-bottom: 1vw;
   transition: all .15s linear;
-  opacity: 1;
+  opacity: .65;
   &:hover{
     transform: scale(1.15);
-    opacity: .7;
+    opacity: .9;
   }
 }

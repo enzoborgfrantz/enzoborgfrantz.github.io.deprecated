@@ -2,6 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 $Raleway: 'Raleway';
 
+h1{
+	color: #181818;
+	text-align: center;
+	opacity: .8;
+}
+
 body {
 	font-family: $font;
 	margin: 0;
@@ -62,117 +68,4 @@ body {
 
 input[type=button] {
 	@include no-appearance();
-}
-$heart-size: 2vw;
-@mixin rotate($deg) {
-	-webkit-transform: rotate($deg);
-	-moz-transform: rotate($deg);
-	-ms-transform: rotate($deg);
-	transform: rotate($deg);
-}
-@mixin heart {
-	width: $heart-size;
-	height: $heart-size;
-	position: fixed;
-	left: 49vw;
-	bottom: 5vh;
-	@include rotate(45deg);
-	background-color: $light-red;
-	transition: transform 0.5s ease-in;
-	opacity: 0.6;
-
-	&:after,
-	&:before {
-		position: absolute;
-		width: $heart-size;
-		height: $heart-size;
-		content: '';
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		-o-border-radius: 50%;
-		border-radius: 50%;
-		background-color: $light-red;
-	}
-
-	&:before {
-		bottom: 0;
-		left: calc(#{-$heart-size/2});
-	}
-
-	&:after {
-		top: calc(-#{$heart-size/2});
-		right: 0;
-	}
-}
-
-.heart-button {
-	@include heart();
-	animation: pulse 1s ease infinite;
-	@keyframes pulse {
-		0% {
-			transform: scale(1) rotate(45deg);
-		}
-
-		50% {
-			transform: scale(1.1) rotate(45deg);
-		}
-
-		100% {
-			transform: scale(1) rotate(45deg);
-		}
-	}
-}
-
-.basic-heart {
-	@include heart();
-	z-index: -1000;
-}
-
-.floating-heart-right {
-	animation: floatright 1.5s ease;
-	//animation-delay: random(3)+s;
-	opacity: 0;
-	@keyframes floatright {
-		 @for $i from 1 through 10{
-			#{$i * 10%} {
-				bottom: calc(#{$i * 2 + 5vh}); //calc(#{$i+5vh});
-				//left: calc(#{45vw- $i - 5vw});
-				left: calc(#{48vw - $i });
-				opacity: calc(#{1- $i/10});
-				transform: scale(calc(#{1-($i/10)})) rotate(0deg);
-			}
-		}
-	}
-}
-
-.floating-heart-middle {
-	animation: floatmiddle 1.5s ease;
-	//animation-delay: random(3)+s;
-	opacity: 0;
-	@keyframes floatmiddle {
-		 @for $i from 1 through 10{
-			#{$i * 10%} {
-				bottom: calc(#{$i *2 + 5vh}); //calc(#{$i+5vh});
-				//left: calc(#{45vw+ $i + 5vw});
-				opacity: calc(#{1- $i/10});
-				transform: scale(calc(#{1-($i/10)})) rotate(45deg);
-			}
-		}
-	}
-}
-
-.floating-heart-left {
-	animation: floatleft 1.5s ease;
-	//animation-delay: random(3)+s;
-	opacity: 0;
-	@keyframes floatleft {
-		 @for $i from 1 through 10{
-			#{$i * 10%} {
-				bottom: calc(#{$i *2 + 5vh}); //calc(#{$i+5vh});
-				left: calc(#{45vw+ $i + 5vw});
-				opacity: calc(#{1- $i/10});
-				transform: scale(calc(#{1-($i/10)})) rotate(90deg);
-			}
-		}
-	}
 }
